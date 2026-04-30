@@ -21,6 +21,10 @@
             ps: with ps; [
               yt-dlp
               qrcode
+              flask
+              pillow
+              opencv-python
+              fpdf2
             ]
           ))
         ];
