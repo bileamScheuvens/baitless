@@ -22,5 +22,3 @@ def download_all():
             continue
         download(video_name, url)
 
-
-download_all()
