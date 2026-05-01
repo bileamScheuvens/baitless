@@ -4,8 +4,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-from qrcode import QRCode
 from flask import Flask
+
 from baitless.constants import STORE
 
 app = Flask(__name__)

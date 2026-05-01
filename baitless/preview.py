@@ -1,10 +1,20 @@
-import cv2
-from PIL import Image
-from qrcode import QRCode
-import random
-import fpdf
-from baitless.constants import preview_dir, video_path, preview_path, STORE
 import os
+import random
+
+import cv2
+import fpdf
+from PIL import Image
+from pypdf import PdfWriter
+from qrcode import QRCode
+
+from baitless.constants import (
+    PREVIEWS,
+    ROOT,
+    STORE,
+    preview_dir,
+    preview_path,
+    video_path,
+)
 
 
 def get_frames(video_name, n_frames=4):
@@ -27,8 +37,7 @@ def get_frames(video_name, n_frames=4):
 # get_frames("tom.mp4")
 def generate_preview(video_name, base_url):
     if os.path.exists(preview_path(video_name)):
-        # return
-        pass
+        return
     pdf = fpdf.FPDF()
     pdf.set_margin(0)
     margin = 15
@@ -71,5 +80,11 @@ def generate_preview(video_name, base_url):
 
 
 def generate_all_previews(base_url):
+    merged = PdfWriter()
     for video_name in os.listdir(STORE):
+        if video_name == ".gitkeep":
+            continue
         generate_preview(video_name, base_url)
+        merged.append(os.path.join(preview_path(video_name)))
+
+    merged.write(os.path.join(ROOT, "catalog.pdf"))

@@ -25,6 +25,7 @@
               pillow
               opencv-python
               fpdf2
+              pypdf
             ]
           ))
         ];

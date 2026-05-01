@@ -2,6 +2,7 @@ import os
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 STORE = os.path.join(ROOT, "store")
+PREVIEWS = os.path.join(ROOT, "previews")
 DOWNLOAD_LIST = os.path.join(ROOT, "download_list.json")
 
 
@@ -14,4 +15,4 @@ def preview_dir(video_name):
 
 
 def preview_path(video_name):
-    return os.path.join(ROOT, "previews", f"{video_name}.pdf")
+    return os.path.join(PREVIEWS, f"{video_name}.pdf")
