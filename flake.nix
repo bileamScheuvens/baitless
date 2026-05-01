@@ -1,5 +1,5 @@
 {
-  description = "Baitless. Analog interface for youtube videos.";
+  description = "Baitless: Offline youtube interface.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

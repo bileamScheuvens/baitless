@@ -1,7 +1,7 @@
 [project]
 name = "baitless"
 version = "1.0"
-description = "Analog interface for youtube videos."
+description = "Baitless: Offline youtube interface."
 
 [tool.cxfreeze]
 executables = [ {script = "main.py"} ]
