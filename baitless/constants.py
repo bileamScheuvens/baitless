@@ -1,6 +1,10 @@
+import sys
 import os
 
-ROOT = os.path.join(os.path.dirname(__file__), "..")
+if getattr(sys, "frozen", False):
+    ROOT = os.path.dirname(sys.executable)
+else:
+    ROOT = os.path.join(os.path.dirname(__file__), "..")
 STORE = os.path.join(ROOT, "store")
 PREVIEWS = os.path.join(ROOT, "previews")
 DOWNLOAD_LIST = os.path.join(ROOT, "download_list.json")

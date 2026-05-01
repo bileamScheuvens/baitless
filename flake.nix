@@ -20,6 +20,7 @@
           (python.withPackages (
             ps: with ps; [
               yt-dlp
+              cx-freeze
               qrcode
               flask
               pillow

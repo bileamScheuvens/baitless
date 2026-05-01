@@ -1,0 +1,26 @@
+[project]
+name = "baitless"
+version = "1.0"
+description = "Analog interface for youtube videos."
+
+[tool.cxfreeze]
+executables = [ {script = "main.py"} ]
+
+[tool.cxfreeze.build_exe]
+excludes = []
+include_files = [
+  ["previews/.gitkeep", "previews/.gitkeep"],
+  ["store/.gitkeep", "store/.gitkeep"],
+  "download_list.json",
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+yt-dlp = "*"
+qrcode = "*"
+Flask = "*"
+Pillow = "*"
+opencv-python = "*"
+fpdf2 = "*"
+pypdf = "*"
+cx-Freeze = "*"
